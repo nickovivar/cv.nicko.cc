@@ -1,0 +1,8 @@
+---
+
+- hosts: all
+  become: yes
+  roles:
+    - role: stackbuilders.sb-debian-base 
+      add_remove_keys: yes
+      bootstrap: yes

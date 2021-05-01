@@ -1,0 +1,15 @@
+---
+ansible_python_interpreter: /usr/bin/python3
+
+domain_name: nicko.cc
+hostname: "{{ sb_debian_base_app_name }}.{{ domain_name }}"
+sb_debian_base_uu_email_alerts: "nickovivar@gmail.com"
+sb_debian_base_app_name: app
+sb_debian_base_deploy_user: '{{ sb_debian_base_app_name }}'
+sb_debian_base_deploy_user_group: '{{ sb_debian_base_app_name }}'
+
+ports:
+  - "22"
+  - "80"
+  - "443"
+

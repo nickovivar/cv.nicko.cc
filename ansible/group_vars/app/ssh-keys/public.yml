@@ -1,0 +1,15 @@
+# =======================================================
+# Authorized SSH keys
+# =======================================================
+
+sb_debian_base_admin_user_authorized_keys:
+  - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCjsmczXbTcGnUoR1AllzKc6K1gxINidC8r7wkK6n6RozUcjDM9+MH71w15uHKEAguvzATEjFP9PFOPTcYOpBV1J8WqqStKi52h/JluCDLT/ksn6LMiLdM+Xh7VHl78EgvadPAvCCyoKRmZr/8KQdPtpImSKOecwfGKJegYLjSksXTSjPbe084/L1JrqxHM3O3hJBXSdPAKZJKMOaqc7bRceDibDlvdXyaMZ5I13o5dYX3HAQZfqAGZRgUFN6qsiVX4O4Qt2m8BnvFZXKkbKzs8WduxDqXo6wP6AN68nNjlWq5W8hIyNSTYAg4ip5nA2W5BLhL95v2ZcV0OwzlRauex nvivar@stackbuilders.com
+
+deploy_users_keys:
+ "{{ sb_debian_base_admin_user_authorized_keys }}"
+deploy_machines_keys:
+  - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCxOsamNuucj3pKEp4We9X6HMRKLuhXHmsiNUEzsqzTv50ei+Z0N5ma1mKsfATEE6xleu2ymOYz5pZDn0a75uNL2kmuNFsYdKFJoUY4jwCcgGTyHLyJ7mDYKmvED94ayquPInR+MQNPZ4Wt5urp9vcSvXxHN+a/S1cQstFgyApFlKkJ5UwroNyYcSaPhEW/3fxsUYv+gnVbWySrjiTooGl5stsyMG7n8rTZv3KQieRCArS6lWM7s6BF5uayqVQyQhOzlcucL7Jh/E/PX9N+9j13yslJiiTRSVxAJ/Dyl0Vuw4X5cfUQ3kSe5gcB+B+nt3oSzb+WFcX33XF3qOBFnvNaxL4NAx45R4Uey+TA3j/4K8DVo0asKOphtsYS/QARDEKUfG8IofAan5ThqNeDBBtZ+w4lgFbkJkcpcQv581sGq9ikZNaVIH5DBVcmQ0gWHqZNuGtcM/jixeIVxgJLU7/5zZPKmjmzkrNpnSQJuERBz9jL1ug92M10+YNJxq5JwWU= ci
+
+sb_debian_base_deploy_user_authorized_keys:
+ "{{ sb_debian_base_admin_user_authorized_keys + deploy_users_keys + deploy_machines_keys }}"
+

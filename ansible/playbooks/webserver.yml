@@ -1,0 +1,18 @@
+---
+
+- hosts: all
+
+  collections:
+    - nginxinc.nginx_core
+
+  roles:
+    - role: stackbuilders.sb-debian-base 
+      add_remove_keys: yes
+    - role: geerlingguy.certbot
+      become: true
+    - role: nginx
+      become: true
+      tag: nginx
+    - role: nginx_config
+      become: true
+      tag: nginx
