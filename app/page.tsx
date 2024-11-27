@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-background">
       <Header />
-      <div id="cv-content">
+      <div>
         <Hero />
         <Experience />
         <Skills />

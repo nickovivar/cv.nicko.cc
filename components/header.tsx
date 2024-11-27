@@ -4,8 +4,8 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ThemeToggle } from './theme-toggle';
 import { Button } from './ui/button';
-import { Download, Github, Linkedin, Mail } from 'lucide-react';
-import { generatePDF } from '@/lib/pdf-generator';
+import { Github, Linkedin, Mail } from 'lucide-react';
+import { siteConfig } from '@/lib/constants';
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -46,22 +46,19 @@ export function Header() {
           </div>
           <div className="flex items-center space-x-4">
             <Button variant="ghost" size="icon" asChild>
-              <a href="https://github.com/nickovivar" target="_blank" rel="noopener noreferrer">
+              <a href={siteConfig.links.github} target="_blank" rel="noopener noreferrer">
                 <Github className="h-5 w-5" />
               </a>
             </Button>
             <Button variant="ghost" size="icon" asChild>
-              <a href="https://linkedin.com/in/nickovivar" target="_blank" rel="noopener noreferrer">
+              <a href={siteConfig.links.linkedin} target="_blank" rel="noopener noreferrer">
                 <Linkedin className="h-5 w-5" />
               </a>
             </Button>
             <Button variant="ghost" size="icon" asChild>
-              <a href="mailto:nickovivar@gmail.com">
+              <a href={siteConfig.links.email}>
                 <Mail className="h-5 w-5" />
               </a>
-            </Button>
-            <Button variant="outline" onClick={generatePDF}>
-              <Download className="mr-2 h-4 w-4" /> Download CV
             </Button>
             <ThemeToggle />
           </div>
