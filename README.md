@@ -1,20 +1,60 @@
-# Nicolas Vivar Davila - SRE Engineer (DevOps) CV
+# Nicolas Vivar - Professional CV
 
-This is the repository for Nicolas Vivar Davila's CV, created using HTML and CSS. The CV is designed with a modern and professional layout, suitable for hosting on GitHub Pages.
+A modern, interactive CV built with Next.js, Tailwind CSS, and various React libraries. Features a responsive design, dark mode support, and PDF export functionality.
 
-## Repository Structure
+## 🚀 Features
 
-### Files
-- **index.html**: The main HTML page that contains the CV content.
-- **styles.css**: The stylesheet for the CV, adding styles to make the CV visually appealing.
-- **README.md**: This file, containing information about the repository.
+- Responsive design for all devices
+- Dark/Light mode toggle
+- Interactive skill charts and progress bars
+- Smooth animations and transitions
+- PDF export functionality
+- SEO optimized
+- Fully accessible
 
-## Hosting on GitHub Pages
-This repository is designed to be hosted on GitHub Pages. To host this CV on GitHub Pages:
+## 🛠️ Tech Stack
 
-## Customization
-Feel free to fork this repository and customize it as per your needs. You can edit the HTML to update personal details or add new sections, and modify the CSS to change the appearance.
+- Next.js 13
+- Tailwind CSS
+- Framer Motion
+- Recharts
+- shadcn/ui
+- TypeScript
 
-## License
-This project is open-source and free to use under the MIT License.
+## 🏃‍♂️ Running Locally
 
+1. Clone the repository:
+```bash
+git clone https://github.com/nickovivar/cv.nicko.cc.git
+cd cv.nicko.cc
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Start the development server:
+```bash
+npm run dev
+```
+
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## 🔨 Building for Production
+
+```bash
+npm run build
+```
+
+The static output will be generated in the `out` directory.
+
+## 📝 Deployment
+
+This site is automatically deployed to GitHub Pages using GitHub Actions. Every push to the `main` branch triggers a new deployment.
+
+The live site can be accessed at: [https://cv.nicko.cc](https://cv.nicko.cc)
+
+## 📄 License
+
+MIT License - feel free to use this code for your own CV!
