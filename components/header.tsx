@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, FileText } from 'lucide-react';
 import { Button } from './ui/button';
 import { ThemeToggle } from './theme-toggle';
 import { NavLinks } from './navigation/nav-links';
@@ -51,6 +51,17 @@ export function Header() {
           </div>
 
           <div className="flex items-center space-x-2 md:space-x-4">
+            <Button
+              variant="outline"
+              size="sm"
+              className="hidden sm:flex items-center gap-2"
+              asChild
+            >
+              <a href="/cv.pdf" download>
+                <FileText className="h-4 w-4" />
+                Download CV
+              </a>
+            </Button>
             <SocialLinks className="hidden sm:inline-flex" />
             <ThemeToggle />
           </div>
