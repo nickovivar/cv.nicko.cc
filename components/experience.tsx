@@ -31,7 +31,9 @@ const experiences = [
       "Management and setup of serverless functions.",
       "Docker, Docker-compose and container orchestration tools administration.",
       "Load and stress tests on web applications.",
-      "Head of the Internal IT department"
+      "Head of the Internal IT department.",
+      "Security audits to multiple projects.",
+      "Cloudfront CDN setup and customization for high traffic sites."
     ]
   },
   {
