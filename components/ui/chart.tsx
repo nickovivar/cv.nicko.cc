@@ -314,7 +314,7 @@ const ChartLegendContent = React.forwardRef<
     );
   }
 );
-ChartLegendContent.displayName = 'ChartLegend';
+ChartLegendContent.displayName = 'ChartLegendContent';
 
 // Helper to extract item config from a payload.
 function getPayloadConfigFromPayload(
