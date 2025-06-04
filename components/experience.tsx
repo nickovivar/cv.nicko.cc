@@ -12,7 +12,7 @@ const experiences = [
     location: "Remote",
     responsibilities: [
       "Continuous Integration and Continuous Delivery optimization with Circle CI.",
-      "Terraform management of GCP (Cloud Functions) infrastrucuture.",
+      "Terraform management of GCP (Cloud Functions) infrastructure.",
       "Load and Stress test of Cloud Functions.",
       "Setup alerting and monitoring with Grafana, and GCP monitoring tools.",
       "Mobile application deployment support.",
