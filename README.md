@@ -1,6 +1,8 @@
-# Nicolas Vivar - Professional CV
+# Nicolas Vivar Davila - SRE Engineer
 
-A modern, interactive CV built with Next.js, Tailwind CSS, and various React libraries. Features a responsive design, dark mode support, and PDF export functionality.
+A modern, interactive portfolio and CV for Nicolas Vivar Davila, an SRE Engineer focused on DevOps, cloud technologies, and automation.
+
+Core site identity and metadata live in `lib/constants.ts`, so branding updates should start there.
 
 ## 🚀 Features
 
