@@ -1,13 +1,58 @@
 export const siteConfig = {
-  name: 'Nicolas Vivar Davila',
-  title: 'SRE Engineer',
-  description: 'Professional portfolio and CV of Nicolas Vivar Davila, SRE Engineer specializing in DevOps and cloud technologies.',
-  url: 'https://cv.nicko.cc',
-  ogImage: 'https://cv.nicko.cc/og.png',
+  identity: {
+    name: 'Nicolas Vivar Davila',
+    shortName: 'Nicolas Vivar',
+    role: 'SRE Engineer',
+    headline: 'SRE Engineer (DevOps)',
+    location: {
+      city: 'Quito',
+      country: 'Ecuador',
+      label: 'Quito, Ecuador',
+    },
+    description:
+      'Professional portfolio and CV of Nicolas Vivar Davila, SRE Engineer specializing in DevOps and cloud technologies.',
+    summary:
+      'Engineer with a passion for Linux (RHEL & Debian) and open source technologies, focused on cloud computing, DevOps, and automation. Experienced with Infrastructure as Code tools like Terraform and AWS CloudFormation, configuration management with Ansible, and CI/CD pipelines that ship fast, reliable, and secure systems.',
+  },
+  site: {
+    url: 'https://cv.nicko.cc',
+    ogImage: 'https://cv.nicko.cc/og.png',
+    locale: 'en_US',
+  },
+  manifest: {
+    name: 'Nicolas Vivar Davila - SRE Engineer',
+    shortName: 'Nicolas Vivar',
+    themeColor: '#ffffff',
+    backgroundColor: '#ffffff',
+    display: 'standalone',
+  },
   links: {
     github: 'https://github.com/nickovivar',
     linkedin: 'https://linkedin.com/in/nickovivar',
     email: 'mailto:nickovivar@gmail.com',
-    credly: 'https://www.credly.com/badges/c98e3f68-440b-4c3c-98b5-0c24a6f657e2/public_url'
-  }
+    credly:
+      'https://www.credly.com/badges/c98e3f68-440b-4c3c-98b5-0c24a6f657e2/public_url',
+  },
+  socialLinks: [
+    {
+      key: 'github',
+      label: 'GitHub',
+      href: 'https://github.com/nickovivar',
+    },
+    {
+      key: 'linkedin',
+      label: 'LinkedIn',
+      href: 'https://linkedin.com/in/nickovivar',
+    },
+    {
+      key: 'email',
+      label: 'Email',
+      href: 'mailto:nickovivar@gmail.com',
+    },
+  ],
+} as const;
+
+export const siteMetadata = {
+  title: `${siteConfig.identity.name} - ${siteConfig.identity.role}`,
+  description: siteConfig.identity.description,
 };
