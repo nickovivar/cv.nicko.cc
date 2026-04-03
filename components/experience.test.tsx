@@ -8,6 +8,7 @@ describe('Experience', () => {
     const markup = renderToStaticMarkup(<Experience />);
 
     expect(markup).toContain('id="experience"');
+    expect(markup).toContain('scroll-mt-24');
     expect(markup).toContain('aria-labelledby="experience-heading"');
     expect(markup).toContain('<ol');
     expect(markup).toContain('aria-label="DevOps Specialist at Devlane - Huckleberry Labs"');

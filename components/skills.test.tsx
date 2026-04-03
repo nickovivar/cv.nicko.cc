@@ -8,6 +8,8 @@ describe('Skills', () => {
     const markup = renderToStaticMarkup(<Skills />);
 
     expect(markup).toContain('Technical Skills');
+    expect(markup).toContain('id="skills"');
+    expect(markup).toContain('scroll-mt-24');
     expect(markup).toContain('Core strengths');
     expect(markup).toContain('Linux');
     expect(markup).toContain('width:95%');

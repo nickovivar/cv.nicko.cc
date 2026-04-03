@@ -1,3 +1,4 @@
+import React from 'react';
 import { ExternalLink } from 'lucide-react';
 import {
   certificationItems,
@@ -9,10 +10,10 @@ import { Badge } from './ui/badge';
 import { Button } from './ui/button';
 
 export function Education() {
-  const primaryEducation = educationItems[0]!;
+  const primaryEducation = educationItems[0];
 
   return (
-    <section id="education" className="py-20 bg-muted/50">
+    <section id="education" className="scroll-mt-24 bg-muted/50 py-20 md:scroll-mt-28">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-center mb-12">
           Education & Certifications
@@ -24,11 +25,19 @@ export function Education() {
                 <CardTitle>Education</CardTitle>
               </CardHeader>
               <CardContent>
-                <h3 className="font-semibold mb-2">{primaryEducation.degree}</h3>
-                <p className="text-muted-foreground mb-2">{primaryEducation.institution}</p>
-                <p className="text-sm text-muted-foreground">
-                  {primaryEducation.period}, {primaryEducation.location}
-                </p>
+                {primaryEducation ? (
+                  <>
+                    <h3 className="font-semibold mb-2">{primaryEducation.degree}</h3>
+                    <p className="text-muted-foreground mb-2">{primaryEducation.institution}</p>
+                    <p className="text-sm text-muted-foreground">
+                      {primaryEducation.period}, {primaryEducation.location}
+                    </p>
+                  </>
+                ) : (
+                  <p className="text-sm text-muted-foreground">
+                    Education information coming soon.
+                  </p>
+                )}
               </CardContent>
             </Card>
           </div>

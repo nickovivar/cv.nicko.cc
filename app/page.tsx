@@ -6,7 +6,7 @@ import { Education } from '@/components/education';
 
 export default function Home() {
   return (
-    <main id="main-content" className="min-h-screen bg-background">
+    <main id="main-content" className="min-h-screen scroll-mt-24 bg-background md:scroll-mt-28">
       <Header />
       <div>
         <Hero />

@@ -7,6 +7,8 @@ describe('Hero', () => {
   it('renders the core profile copy from shared config', () => {
     const markup = renderToStaticMarkup(<Hero />);
 
+    expect(markup).toContain('id="about"');
+    expect(markup).toContain('scroll-mt-24');
     expect(markup).toContain('Nicolas Vivar Davila');
     expect(markup).toContain('SRE Engineer (DevOps)');
     expect(markup).toContain('Quito, Ecuador');
