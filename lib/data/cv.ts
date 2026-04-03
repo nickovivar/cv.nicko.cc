@@ -1,4 +1,5 @@
 import { siteConfig } from '@/lib/constants';
+import { publicAssetPaths, withBasePath } from '@/lib/public-paths';
 
 export type NavItem = {
   href: `#${string}`;
@@ -35,7 +36,7 @@ export type LanguageItem = {
   proficiency: string;
 };
 
-export const resumeAssetPath = '/cv.pdf';
+export const resumeAssetPath = withBasePath(publicAssetPaths.resume);
 
 export const navItems: NavItem[] = [
   { href: '#about', label: 'About' },

@@ -1,62 +1,49 @@
-# Nicolas Vivar Davila - SRE Engineer
+# Nicolas Vivar Davila CV
 
-A modern, interactive portfolio and CV for Nicolas Vivar Davila, an SRE Engineer focused on DevOps, cloud technologies, and automation.
+Static Next.js portfolio and resume site for Nicolas Vivar Davila.
 
-Core site identity and metadata live in `lib/constants.ts`, so branding updates should start there.
+## Stack
 
-## 🚀 Features
-
-- Responsive design for all devices
-- Dark/Light mode toggle
-- Interactive skill charts and progress bars
-- Smooth animations and transitions
-- PDF export functionality
-- SEO optimized
-- Fully accessible
-
-## 🛠️ Tech Stack
-
-- Next.js 13
-- Tailwind CSS
-- Framer Motion
-- Recharts
-- shadcn/ui
+- Next.js 14 App Router with static export enabled
+- React 18
 - TypeScript
+- Tailwind CSS
+- `next-themes` for dark mode
+- Vitest plus Testing Library for regression coverage
 
-## 🏃‍♂️ Running Locally
+## Project Structure
 
-1. Clone the repository:
-```bash
-git clone https://github.com/nickovivar/cv.nicko.cc.git
-cd cv.nicko.cc
-```
+- `app/` - App Router entrypoints, layout metadata, and web manifest
+- `components/` - Page sections, header/navigation, and UI primitives
+- `lib/constants.ts` - Shared site identity, links, and metadata copy
+- `lib/data/cv.ts` - Resume content and navigation data
+- `lib/public-paths.ts` - Base-path-aware helpers for public assets and metadata URLs
+- `public/` - Static assets such as the PDF resume, icons, and favicons
 
-2. Install dependencies:
+## Local Development
+
 ```bash
 npm install
-```
-
-3. Start the development server:
-```bash
 npm run dev
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+The dev server runs at `http://localhost:3000`.
 
-## 🔨 Building for Production
+## Tests
 
 ```bash
-npm run build
+npm test
 ```
 
-The static output will be generated in the `out` directory.
+## Deployment Notes
 
-## 📝 Deployment
+The site is configured for static export via `next.config.js`.
 
-This site is automatically deployed to GitHub Pages using GitHub Actions. Every push to the `main` branch triggers a new deployment.
+- `NEXT_PUBLIC_BASE_PATH` can be set to deploy under a subpath.
+- Public asset URLs, manifest links, and social metadata are generated through `lib/public-paths.ts` so they stay valid when `basePath` is set.
 
-The live site can be accessed at: [https://cv.nicko.cc](https://cv.nicko.cc)
+## Content Updates
 
-## 📄 License
-
-MIT License - feel free to use this code for your own CV!
+- Update personal details, links, and summary text in `lib/constants.ts`.
+- Update experience, skills, education, certifications, and languages in `lib/data/cv.ts`.
+- Replace assets in `public/` if you want different resume files or social/share images.

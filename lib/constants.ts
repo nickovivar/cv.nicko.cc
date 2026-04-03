@@ -1,3 +1,5 @@
+import { publicAssetPaths } from '@/lib/public-paths';
+
 export const siteConfig = {
   identity: {
     name: 'Nicolas Vivar Davila',
@@ -16,7 +18,7 @@ export const siteConfig = {
   },
   site: {
     url: 'https://cv.nicko.cc',
-    ogImage: 'https://cv.nicko.cc/og.png',
+    ogImagePath: publicAssetPaths.ogImage,
     locale: 'en_US',
   },
   manifest: {

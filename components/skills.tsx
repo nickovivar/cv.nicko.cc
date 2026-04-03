@@ -5,7 +5,7 @@ export function Skills() {
   const topSkills = skillItems.filter((skill) => skill.value >= 90);
 
   return (
-    <section id="skills" className="py-20">
+    <section id="skills" className="scroll-mt-24 py-20 md:scroll-mt-28">
       <div className="container mx-auto px-4">
         <h2 className="mb-12 text-center text-3xl font-bold">Technical Skills</h2>
         <div className="grid gap-12 md:grid-cols-[minmax(0,1.2fr)_minmax(280px,0.8fr)] md:items-start">

@@ -6,7 +6,10 @@ export function Hero() {
   const { identity } = siteConfig;
 
   return (
-    <section id="about" className="min-h-screen flex items-center justify-center pt-20">
+    <section
+      id="about"
+      className="flex min-h-screen scroll-mt-24 items-center justify-center pt-20 md:scroll-mt-28"
+    >
       <div className="container mx-auto px-4">
         <div className="text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-4">

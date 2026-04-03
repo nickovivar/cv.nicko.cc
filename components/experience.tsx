@@ -6,7 +6,11 @@ export function Experience() {
   const headingId = 'experience-heading';
 
   return (
-    <section id="experience" aria-labelledby={headingId} className="py-20 bg-muted/50">
+    <section
+      id="experience"
+      aria-labelledby={headingId}
+      className="scroll-mt-24 bg-muted/50 py-20 md:scroll-mt-28"
+    >
       <div className="container mx-auto px-4">
         <h2 id={headingId} className="text-3xl font-bold text-center mb-12">
           Work Experience
