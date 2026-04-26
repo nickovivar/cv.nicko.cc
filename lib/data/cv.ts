@@ -47,8 +47,8 @@ export const navItems: NavItem[] = [
 
 export const experienceItems: ExperienceItem[] = [
   {
-    title: 'DevOps Specialist',
-    company: 'Devlane - Huckleberry Labs',
+    title: 'Platform & DevOps Engineer',
+    company: 'Devlane',
     period: '05/2024 – Present',
     location: 'Remote',
     responsibilities: [
@@ -105,8 +105,8 @@ export const skillItems: SkillItem[] = [
 
 export const educationItems: EducationItem[] = [
   {
-    degree: 'Ing. Electronico en Redes y Comunicacion de Datos',
-    institution: 'Escuela Politecnica del Ejercito',
+    degree: 'Ing. Electrónico en Redes y Comunicación de Datos',
+    institution: 'Escuela Politécnica del Ejército',
     period: '2007 – 2013',
     location: siteConfig.identity.location.label,
   },

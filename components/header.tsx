@@ -2,7 +2,6 @@ import React from 'react';
 import { FileText } from 'lucide-react';
 import { resumeAssetPath } from '@/lib/data/cv';
 import { Button } from './ui/button';
-import { ThemeToggle } from './theme-toggle';
 import { NavLinks } from './navigation/nav-links';
 import { SocialLinks } from './navigation/social-links';
 import { HeaderShell } from './header-shell';
@@ -29,7 +28,6 @@ export function Header() {
             </a>
           </Button>
           <SocialLinks className="hidden sm:flex" />
-          <ThemeToggle />
         </>
       }
     />

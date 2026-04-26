@@ -49,8 +49,8 @@ export function HeaderShell({ desktopNavigation, actions }: HeaderShellProps) {
   return (
     <header
       className={`fixed top-0 z-50 w-full transition-all duration-300 ${
-        isScrolled ? 'bg-background/80 shadow-sm backdrop-blur-md' : 'bg-transparent'
-      }`}
+        isScrolled ? 'shadow-sm border-b border-border/50' : ''
+      } bg-background/95 backdrop-blur-md`}
     >
       <div className="container mx-auto px-4 py-4">
         <a

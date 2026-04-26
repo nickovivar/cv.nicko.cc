@@ -4,17 +4,17 @@ export const siteConfig = {
   identity: {
     name: 'Nicolas Vivar Davila',
     shortName: 'Nicolas Vivar',
-    role: 'SRE Engineer',
-    headline: 'SRE Engineer (DevOps)',
+    role: 'Platform & DevOps Engineer',
+    headline: 'Platform & DevOps Engineer',
     location: {
       city: 'Quito',
       country: 'Ecuador',
       label: 'Quito, Ecuador',
     },
     description:
-      'Professional portfolio and CV of Nicolas Vivar Davila, SRE Engineer specializing in DevOps and cloud technologies.',
+      'Professional portfolio and CV of Nicolas Vivar Davila, Platform & DevOps Engineer specializing in DevOps and cloud technologies.',
     summary:
-      'Engineer with a passion for Linux (RHEL & Debian) and open source technologies, focused on cloud computing, DevOps, and automation. Experienced with Infrastructure as Code tools like Terraform and AWS CloudFormation, configuration management with Ansible, and CI/CD pipelines that ship fast, reliable, and secure systems.',
+      'Platform & DevOps Engineer with a long-standing love for Linux (RHEL & Debian) and open source technologies, focused on cloud computing, DevOps, and automation. Experienced with Infrastructure as Code tools like Terraform and AWS CloudFormation, configuration management with Ansible, and CI/CD pipelines that ship fast, reliable, and secure systems.',
   },
   site: {
     url: 'https://cv.nicko.cc',
@@ -22,10 +22,10 @@ export const siteConfig = {
     locale: 'en_US',
   },
   manifest: {
-    name: 'Nicolas Vivar Davila - SRE Engineer',
+    name: 'Nicolas Vivar Davila - Platform & DevOps Engineer',
     shortName: 'Nicolas Vivar',
-    themeColor: '#ffffff',
-    backgroundColor: '#ffffff',
+    themeColor: '#0A0A0A',
+    backgroundColor: '#0A0A0A',
     display: 'standalone',
   },
   links: {

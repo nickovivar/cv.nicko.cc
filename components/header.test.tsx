@@ -3,10 +3,6 @@ import { createRoot, type Root } from 'react-dom/client';
 import { act } from 'react-dom/test-utils';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
-vi.mock('./theme-toggle', () => ({
-  ThemeToggle: () => <button type="button">Toggle theme</button>,
-}));
-
 import { Header } from './header';
 
 describe('Header', () => {
@@ -85,7 +81,7 @@ describe('Header', () => {
     expect(container.querySelector('#mobile-navigation')).toBeNull();
   });
 
-  it('applies sticky header styling after the scroll threshold', async () => {
+  it('renders with a dark background from initial load (not transparent)', async () => {
     await act(async () => {
       root.render(<Header />);
     });
@@ -93,14 +89,56 @@ describe('Header', () => {
     const header = container.querySelector('header');
 
     expect(header).not.toBeNull();
-    expect(header?.className).toContain('bg-transparent');
+    // Header must have a dark background immediately — no transparent flash
+    expect(header?.className).toContain('bg-background/95');
+    expect(header?.className).toContain('backdrop-blur-md');
+  });
+
+  it('adds a bottom border after scrolling past the threshold', async () => {
+    await act(async () => {
+      root.render(<Header />);
+    });
+
+    const header = container.querySelector('header');
+
+    expect(header).not.toBeNull();
+    // Initial state: no border
+    expect(header?.className).not.toContain('border-b');
 
     await act(async () => {
       window.scrollY = 80;
       window.dispatchEvent(new Event('scroll'));
     });
 
-    expect(header?.className).toContain('bg-background/80');
-    expect(header?.className).toContain('backdrop-blur-md');
+    // Scrolled state: border appears
+    expect(header?.className).toContain('border-b');
+    expect(header?.className).toContain('border-border/50');
+  });
+
+  it('does not render a ThemeToggle component', async () => {
+    await act(async () => {
+      root.render(<Header />);
+    });
+
+    const header = container.querySelector('header');
+
+    expect(header).not.toBeNull();
+    expect(header?.textContent).not.toContain('Toggle theme');
+    expect(header?.textContent).not.toContain('Switch to');
+  });
+
+  it('retains Download CV button and social links in header actions', async () => {
+    await act(async () => {
+      root.render(<Header />);
+    });
+
+    // Download CV link must be present
+    const downloadLink = container.querySelector('a[aria-label="Download CV as PDF"]');
+    expect(downloadLink).not.toBeNull();
+    expect(downloadLink?.textContent).toContain('Download CV');
+
+    // Social links container must be present
+    const socialLinks = container.querySelector('[aria-label="Social links"]');
+    expect(socialLinks).not.toBeNull();
   });
 });
