@@ -1,12 +1,19 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Poppins } from 'next/font/google';
-import { ThemeProvider } from '@/components/theme-provider';
+import { Inter, Space_Grotesk } from 'next/font/google';
 import { metadataConfig } from '@/lib/metadata';
 
-const poppins = Poppins({
+const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-heading',
+  weight: ['400', '500', '600', '700'],
+  display: 'swap',
+});
+
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-body',
+  display: 'swap',
 });
 
 export const metadata: Metadata = metadataConfig;
@@ -17,16 +24,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={poppins.className}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
+    <html lang="en" className="dark" suppressHydrationWarning>
+      <body className={`${inter.variable} ${spaceGrotesk.variable} font-body`}>
+        {children}
       </body>
     </html>
   );

@@ -1,4 +1,4 @@
-import { existsSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { afterEach, describe, expect, it } from 'vitest';
 import { siteConfig } from '@/lib/constants';
@@ -13,7 +13,7 @@ afterEach(() => {
 
 describe('site metadata', () => {
   it('exports the canonical SEO values', () => {
-    expect(metadataConfig.title).toBe('Nicolas Vivar Davila - SRE Engineer');
+    expect(metadataConfig.title).toBe('Nicolas Vivar Davila - Platform & DevOps Engineer');
     expect(metadataConfig.description).toContain('Professional portfolio and CV');
     expect(metadataConfig.manifest).toBe(publicAssetPaths.manifest);
     expect(metadataConfig.alternates?.canonical).toBe('/');
@@ -56,5 +56,44 @@ describe('site metadata', () => {
 
     expect(existsSync(ogImagePath)).toBe(true);
     expect(existsSync(manifestIconPath)).toBe(true);
+  });
+});
+
+describe('RootLayout — dark-only contract', () => {
+  const layoutSource = readFileSync(resolve(process.cwd(), 'app', 'layout.tsx'), 'utf-8');
+
+  it('hard-codes className="dark" on the <html> element', () => {
+    // R1: Exclusive dark-mode rendering — html must always have class="dark"
+    expect(layoutSource).toContain('className="dark"');
+  });
+
+  it('loads Space Grotesk with display: swap for headings', () => {
+    // R2: Font loading without layout shift — display: swap prevents CLS
+    expect(layoutSource).toContain("Space_Grotesk");
+    expect(layoutSource).toContain("variable: '--font-heading'");
+    expect(layoutSource).toContain("display: 'swap'");
+  });
+
+  it('loads Inter with display: swap for body text', () => {
+    // R2: Font loading without layout shift
+    expect(layoutSource).toContain("Inter(");
+    expect(layoutSource).toContain("variable: '--font-body'");
+    // display: 'swap' appears at least twice (both fonts)
+    const swapCount = (layoutSource.match(/display: 'swap'/g) ?? []).length;
+    expect(swapCount).toBeGreaterThanOrEqual(2);
+  });
+
+  it('applies both font CSS variables to the body className', () => {
+    // R2: Font application — body must reference both font variables
+    expect(layoutSource).toContain('inter.variable');
+    expect(layoutSource).toContain('spaceGrotesk.variable');
+    expect(layoutSource).toContain('font-body');
+  });
+
+  it('does NOT import or use ThemeProvider or next-themes', () => {
+    // R1: No theme provider — dark-only site
+    expect(layoutSource).not.toContain('ThemeProvider');
+    expect(layoutSource).not.toContain('next-themes');
+    expect(layoutSource).not.toContain('useTheme');
   });
 });

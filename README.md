@@ -8,7 +8,7 @@ Static Next.js portfolio and resume site for Nicolas Vivar Davila.
 - React 18
 - TypeScript
 - Tailwind CSS
-- `next-themes` for dark mode
+- Dark-only theme with Space Grotesk + Inter typography
 - Vitest plus Testing Library for regression coverage
 
 ## Project Structure

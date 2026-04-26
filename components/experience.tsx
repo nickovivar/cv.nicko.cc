@@ -12,18 +12,18 @@ export function Experience() {
       className="scroll-mt-24 bg-muted/50 py-20 md:scroll-mt-28"
     >
       <div className="container mx-auto px-4">
-        <h2 id={headingId} className="text-3xl font-bold text-center mb-12">
+        <h2 id={headingId} className="font-heading text-3xl font-bold text-center text-primary mb-12">
           Work Experience
         </h2>
         <ol className="space-y-8">
           {experienceItems.map((exp) => (
             <li key={`${exp.company}-${exp.period}`}>
               <article aria-label={`${exp.title} at ${exp.company}`}>
-              <Card>
+              <Card className="border-l-2 border-primary">
                 <CardHeader>
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between">
                     <div>
-                      <CardTitle className="text-xl mb-2">{exp.title}</CardTitle>
+                      <CardTitle className="font-heading text-xl mb-2">{exp.title}</CardTitle>
                       <p className="text-lg font-medium text-primary">{exp.company}</p>
                     </div>
                     <div className="mt-2 md:mt-0 text-right">

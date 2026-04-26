@@ -14,7 +14,7 @@ describe('web manifest', () => {
   it('uses the shared site identity and icons', () => {
     const result = manifest();
 
-    expect(result.name).toBe('Nicolas Vivar Davila - SRE Engineer');
+    expect(result.name).toBe('Nicolas Vivar Davila - Platform & DevOps Engineer');
     expect(result.short_name).toBe('Nicolas Vivar');
     expect(result.description).toContain('Professional portfolio and CV');
     expect(result.start_url).toBe('/');
@@ -23,6 +23,13 @@ describe('web manifest', () => {
       publicAssetPaths.icons.maskable192,
       publicAssetPaths.icons.maskable512,
     ]);
+  });
+
+  it('uses dark theme colors for theme_color and background_color', () => {
+    const result = manifest();
+
+    expect(result.theme_color).toBe('#0A0A0A');
+    expect(result.background_color).toBe('#0A0A0A');
   });
 
   it('prefixes manifest URLs with the configured basePath', () => {

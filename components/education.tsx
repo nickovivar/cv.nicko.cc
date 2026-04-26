@@ -15,14 +15,14 @@ export function Education() {
   return (
     <section id="education" className="scroll-mt-24 bg-muted/50 py-20 md:scroll-mt-28">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12">
+        <h2 className="font-heading text-3xl font-bold text-center text-primary mb-12">
           Education & Certifications
         </h2>
         <div className="grid gap-8 md:grid-cols-2">
           <div>
             <Card>
               <CardHeader>
-                <CardTitle>Education</CardTitle>
+                <CardTitle className="font-heading">Education</CardTitle>
               </CardHeader>
               <CardContent>
                 {primaryEducation ? (
@@ -44,38 +44,40 @@ export function Education() {
           <div>
             <Card>
               <CardHeader>
-                <CardTitle>Certifications & Languages</CardTitle>
+                <CardTitle className="font-heading">Certifications & Languages</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="mb-6">
-                  <h3 className="font-semibold mb-2">Certifications</h3>
-                  {certificationItems.map((certification) => (
-                    <div key={certification.name} className="flex items-center space-x-2">
-                      <Badge variant="secondary">{certification.name}</Badge>
-                      <Button
-                        variant="ghost"
-                        size="sm"
-                        className="h-6 px-2"
-                        asChild
-                      >
-                        <a
-                          href={certification.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center"
+                  <h3 className="font-semibold mb-3">Certifications</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {certificationItems.map((certification) => (
+                      <div key={certification.name} className="flex items-center">
+                        <Badge variant="secondary" className="border-primary/30">{certification.name}</Badge>
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          className="h-6 px-2"
+                          asChild
                         >
-                          <ExternalLink className="h-4 w-4" />
-                          <span className="sr-only">View Certificate</span>
-                        </a>
-                      </Button>
-                    </div>
-                  ))}
+                          <a
+                            href={certification.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center"
+                          >
+                            <ExternalLink className="h-4 w-4" />
+                            <span className="sr-only">View Certificate</span>
+                          </a>
+                        </Button>
+                      </div>
+                    ))}
+                  </div>
                 </div>
                 <div>
-                  <h3 className="font-semibold mb-2">Languages</h3>
-                  <div className="space-x-2">
+                  <h3 className="font-semibold mb-3">Languages</h3>
+                  <div className="flex flex-wrap gap-2">
                     {languageItems.map((language) => (
-                      <Badge key={language.name}>
+                      <Badge key={language.name} className="border-primary/30">
                         {language.name} ({language.proficiency})
                       </Badge>
                     ))}
